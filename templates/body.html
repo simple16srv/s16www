@@ -1,0 +1,13 @@
+{% extends 'panel/base.html' %}
+
+{% block body %}
+    {% include 'panel/header.html' %}
+    {% include 'panel/menu.html' %}
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% include 'panel/modal_login.html' %}
+{% endblock %}

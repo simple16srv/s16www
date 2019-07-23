@@ -1,0 +1,30 @@
+{% load static %}
+
+<div class="container" id="header">
+    <img src="{% static 'panel/img/s16-logo-72ppi.png' %}">
+</div>
+<div class="container-fluid" id="player-info-wrapper">
+    <div id="player-info-box">
+        <div id="player-info">
+            {% if request.session.player.authenticated %}
+                <div class="avatar">
+                    {% if request.session.player.mojang_uuid %}
+                        <img src="https://crafatar.com/avatars/{{ request.session.player.mojang_uuid }}">
+                    {% else %}
+                        <img src="{% static 'panel/img/sth.png' %}">
+                    {% endif %}
+                </div>
+                <div class="playername">{{ request.session.player.username }}</div>
+                <div class="logout">
+                    <a href="{% url 'main:api:game_logout' %}">Wyloguj</a>
+                </div>
+            {% else %}
+                <div class="login">
+                <span data-toggle="modal" data-target="#modal-login">
+                    Zaloguj sie
+                </span>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{% load activeurl %}
+{% activeurl parent_tag="div" %}
+    <div class="container-fluid" id="menu-wrapper">
+        <div class="container" id="menu">
+            <div class="menu-item">
+                <a href="{% url 'main:index' %}">Strona główna</a>
+            </div>
+            <div class="menu-item">
+                <a href="{% url 'main:panel_home' %}">Twój profil</a>
+            </div>
+            <div class="menu-item">
+                <a href="{% url 'main:store' %}">Sklep</a>
+            </div>
+            <div class="menu-item">
+                <a href="{% url 'main:forum' %}">Forum</a>
+            </div>
+        </div>
+    </div>
+{% endactiveurl %}

@@ -1,0 +1,16 @@
+{% extends 'panel/body.html' %}
+
+{% block content %}
+    <div id="store">
+        {% for category, items in categories %}
+            <div class="store-category">
+                <div class="title">{{ category.name }}</div>
+                <div class="items">
+                    {% for item in items %}
+                        {% include 'panel/store_item.html' %}
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
